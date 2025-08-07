@@ -2,9 +2,12 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  
   const stats = [
     { label: 'Активных сайтов', value: '2,847', icon: 'Globe', color: 'text-blue-600' },
     { label: 'Заказов в месяц', value: '15,239', icon: 'ShoppingCart', color: 'text-green-600' },
@@ -28,7 +31,11 @@ const HeroSection = () => {
           От идеи до первого заказа за один день! 🎯
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
-          <Button size="lg" className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 text-lg gap-3">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 text-lg gap-3"
+            onClick={() => navigate('/templates')}
+          >
             <Icon name="Sparkles" size={20} />
             Создать сайт бесплатно
           </Button>
