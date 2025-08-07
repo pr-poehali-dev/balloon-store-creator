@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
+import DragDropBuilder from '@/components/DragDropBuilder';
 
 const PlatformTabs = () => {
   const [activeTemplate, setActiveTemplate] = useState(null);
@@ -143,34 +144,7 @@ const PlatformTabs = () => {
 
           {/* Constructor Tab */}
           <TabsContent value="constructor">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                Простой конструктор сайтов
-              </h2>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                Перетаскивай блоки, меняй цвета, добавляй контент - всё как в конструкторе LEGO! 🧩
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { title: 'Drag & Drop редактор', desc: 'Перетаскивай элементы мышкой', icon: 'MousePointer', color: 'from-blue-400 to-blue-600' },
-                { title: 'Готовые блоки', desc: 'Каталоги, галереи, формы заказа', icon: 'Blocks', color: 'from-green-400 to-green-600' },
-                { title: 'Адаптивный дизайн', desc: 'Красиво на телефоне и компьютере', icon: 'Smartphone', color: 'from-purple-400 to-purple-600' },
-                { title: 'Смена цветов', desc: 'Настрой фирменные цвета одним кликом', icon: 'Palette', color: 'from-pink-400 to-pink-600' },
-                { title: 'SEO оптимизация', desc: 'Автоматическая настройка для поисковиков', icon: 'Search', color: 'from-yellow-400 to-yellow-600' },
-                { title: 'Быстрая загрузка', desc: 'Сайт грузится мгновенно', icon: 'Zap', color: 'from-red-400 to-red-600' }
-              ].map((feature, index) => (
-                <Card key={index} className="bg-white/70 backdrop-blur-sm border-pink-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
-                  <CardContent className="pt-6">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <Icon name={feature.icon} className="text-white" size={24} />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2 text-gray-900">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <DragDropBuilder />
           </TabsContent>
 
           {/* Templates Tab */}
